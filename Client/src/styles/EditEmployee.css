@@ -1,0 +1,173 @@
+/* Container Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #f7f8fc;
+  padding: 30px 20px;
+  border-right: 1px solid #ddd;
+  position: fixed;
+  height: 100%;
+  top: 0;
+}
+
+.sidebar h2 {
+  color: #007bff;
+  font-size: 22px;
+  margin-bottom: 40px;
+
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 18px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #555;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Main Layout */
+.main {
+  flex: 1;
+  margin-left: 240px;  /* Ensure main content has space for sidebar */
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px 30px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+.nav-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.icon-btn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* Form Section */
+
+
+.editform h2 {
+  margin-top: 100px;
+  margin-bottom:40px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.edit-employee-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* Two-column grid */
+  gap: 20px 30px;
+  margin-bottom: 40px;
+}
+.edit-employee-form {
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 200%;
+height:70vh;
+  max-width: 1200px;  /* Increased max width */
+  margin: 40px auto;
+
+
+}
+
+.edit-employee-form input,
+.edit-employee-form select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  background: white;
+}
+
+/* Button Group */
+.button-group {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.update-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Stack the form fields vertically on smaller screens */
+  .edit-employee-form form {
+    grid-template-columns: 1fr;  /* Stack columns */
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .main {
+    margin-left: 0;
+  }
+}
